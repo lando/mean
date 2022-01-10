@@ -20,11 +20,11 @@ lando init --source cwd --recipe mean --option node=14 --option port=2368 --opti
 
 # Should install the ghost cli and install a new ghost app
 cd mean
-echo -e "\nplugins:\n  \"@lando/mean/\": ./../../" >> .lando.yml
 lando ssh -c "npm install ghost-cli@latest -g && mkdir src && cd src && ghost install local --ip 0.0.0.0 && ghost stop"
 
 # Should start up successfully
 cd mean
+echo -e "\nplugins:\n  \"@lando/mean/\": ./../../" >> .lando.yml
 lando start
 ```
 
