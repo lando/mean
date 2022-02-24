@@ -1,65 +1,41 @@
-# Lando MEAN Plugin
+# MEAN Lando Plugin
 
-The Lando MEAN plugin recipe.
+This is the _official_ [Lando](https://lando.dev) plugin for [MEAN](https://en.wikipedia.org/wiki/MEAN_%28software_bundle%29). When installed it...
 
-## Installation
+* Allows users to run a `mean` stack
+* Allows users to configure `node` version from `6` all the way to `16`
+* Allows users to configure database backend (`mariadb`, '`mongo`, `mysql`, or `postgres`)
+* Allows users to set start commands at recipe level
+* Allows users to install global dependencies at recipe level
 
-```bash
-# With npm
-npm install @lando/mean
+Of course, once a user is running their MEAN project with Lando they can take advantage of [all the other awesome development features](https://docs.lando.dev) Lando provides.
 
-# With yarn
-yarn add @lando/mean
+## Basic Usage
+
+Add a `mean` recipe to your Landofile
+
+```yaml
+name: mean-app
+recipe: mean
 ```
+
+For more info you should check out the [docs](https://docs.lando.dev/mean):
+
+* [Getting Started](https://docs.lando.dev/mean/)
+* [Configuration](https://docs.lando.dev/mean/config.html)
+* [Tooling](https://docs.lando.dev/mean/tooling.html)
+* [Examples](https://github.com/lando/mean/tree/main/examples)
+* [Development](https://docs.lando.dev/mean/development.html)
 
 ## Issues, Questions and Support
 
-If you have a question or would like some community support we recommend you [join us on Slack](https://launchpass.com/devwithlando). Note that this is the Slack community for [Lando](https://lando.dev) but we are more than happy to help with this module as well!
+If you have a question or would like some community support we recommend you [join us on Slack](https://launchpass.com/devwithlando).
 
 If you'd like to report a bug or submit a feature request then please [use the issue queue](https://github.com/lando/mean/issues/new/choose) in this repo.
 
 ## Changelog
 
 We try to log all changes big and small in both [THE CHANGELOG](https://github.com/lando/mean/blob/main/CHANGELOG.md) and the [release notes](https://github.com/lando/mean/releases).
-
-
-## Development
-
-* Requires [Node 14+](https://nodejs.org/dist/latest-v14.x/)
-* Prefers [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)
-
-```bash
-git clone https://github.com/lando/mean.git && cd mean
-yarn install
-```
-
-If you dont' want to install Node 14 or Yarn for whatever reason you can install [Lando](https://docs.lando.dev/basics/installation.html) and use that:
-
-```bash
-git clone https://github.com/lando/mean.git && cd mean
-# Install deps and get node
-lando start
-
-# Run commands
-lando node
-lando yarn
-```
-
-## Testing
-
-```bash
-# Lint the code
-yarn lint
-
-# Run unit tests
-yarn test
-```
-
-## Releasing
-
-```bash
-yarn release
-```
 
 ## Contributors
 
@@ -69,6 +45,7 @@ yarn release
 
 Made with [contributors-img](https://contrib.rocks).
 
-## Other Resources
+## Other Selected Resources
 
-* [Important advice](https://www.youtube.com/watch?v=WA4iX5D9Z64)
+* [LICENSE](https://github.com/lando/mean/blob/main/LICENSE.md)
+* [The best professional advice ever](https://www.youtube.com/watch?v=tkBVDh7my9Q)
