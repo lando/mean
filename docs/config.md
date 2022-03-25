@@ -198,7 +198,7 @@ You can get also get the above information, and more, by using the [`lando info`
 
 ## Using custom config files
 
-You may need to override our [default MEAN config](https://github.com/lando/lando/tree/master/plugins/lando-recipes/recipes/mean) with your own.
+You may need to override our [default MEAN config](https://github.com/lando/mean/tree/main/recipes/mean) with your own.
 
 If you do this, you must use files that exist inside your application and express them relative to your project root as shown below:
 
