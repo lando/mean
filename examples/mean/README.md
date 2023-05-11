@@ -16,15 +16,24 @@ lando poweroff
 
 # Initialize an empty mean recipe
 rm -rf mean && mkdir -p mean && cd mean
-lando init --source cwd --recipe mean --option node=14 --option port=2368 --option command="/var/www/.npm-global/bin/ghost run -d /app/src -D" --name lando-mean
+lando init --source cwd --recipe mean --option node=16 --option port=2368 --option command="/var/www/.npm-global/bin/ghost run -d /app/src -D" --name lando-mean
 
 # Should install the ghost cli and install a new ghost app
 cd mean
 lando ssh -c "npm install ghost-cli@latest -g && mkdir src && cd src && ghost install local --ip 0.0.0.0 && ghost stop"
 
+# Should dog food the plugin
+cd mean
+echo -e "\nplugins:\n  \"@lando/mean\": ./../../../" >> .lando.yml
+lando --clear
+
+# Should create a package.json
+cd mean
+lando npm init -y
+lando ssh -c "cat package.json"
+
 # Should start up successfully
 cd mean
-echo -e "\nplugins:\n  \"@lando/mean/\": ./../../" >> .lando.yml
 lando start
 ```
 
@@ -38,9 +47,9 @@ Run the following commands to validate things are rolling as they should.
 cd mean
 lando ssh -s appserver -c "curl -L localhost:2368" | grep "Ghost"
 
-# Should use node 14 if specified
+# Should use node 16 if specified
 cd mean
-lando node -v | grep v14.
+lando node -v | grep v16.
 
 # Should be running mongo 4.2 by default
 cd mean
