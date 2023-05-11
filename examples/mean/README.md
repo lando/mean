@@ -46,9 +46,9 @@ Run the following commands to validate things are rolling as they should.
 cd mean
 lando ssh -s appserver -c "curl -L localhost:2368" | grep "Ghost"
 
-# Should use node 14 if specified
+# Should use node 16 if specified
 cd mean
-lando node -v | grep v14.
+lando node -v | grep v16.
 
 # Should be running mongo 4.2 by default
 cd mean
