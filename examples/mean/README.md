@@ -27,9 +27,10 @@ cd mean
 echo -e "\nplugins:\n  \"@lando/mean\": ./../../../" >> .lando.yml
 lando --clear
 
-# Should copy the package-lock.json
+# Should create a package.json
 cd mean
-cp -f package-lock.json package.json
+lando npm init -y
+lando ssh -c "cat package.json"
 
 # Should start up successfully
 cd mean
