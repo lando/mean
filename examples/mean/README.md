@@ -16,15 +16,23 @@ lando poweroff
 
 # Initialize an empty mean recipe
 rm -rf mean && mkdir -p mean && cd mean
-lando init --source cwd --recipe mean --option node=14 --option port=2368 --option command="/var/www/.npm-global/bin/ghost run -d /app/src -D" --name lando-mean
+lando init --source cwd --recipe mean --option node=16 --option port=2368 --option command="/var/www/.npm-global/bin/ghost run -d /app/src -D" --name lando-mean
 
 # Should install the ghost cli and install a new ghost app
 cd mean
 lando ssh -c "npm install ghost-cli@latest -g && mkdir src && cd src && ghost install local --ip 0.0.0.0 && ghost stop"
 
+# Should dog food the plugin
+cd mean
+echo -e "\nplugins:\n  \"@lando/mean\": ./../../../" >> .lando.yml
+lando --clear
+
+# Should copy the package-lock.json
+cd mean
+cp -f package-lock.json package.json
+
 # Should start up successfully
 cd mean
-echo -e "\nplugins:\n  \"@lando/mean/\": ./../../" >> .lando.yml
 lando start
 ```
 
