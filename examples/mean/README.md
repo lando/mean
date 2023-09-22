@@ -24,7 +24,7 @@ lando ssh -c "npm install ghost-cli@latest -g && mkdir src && cd src && ghost in
 
 # Should dog food the plugin
 cd mean
-echo -e "\nplugins:\n  \"@lando/mean\": ./../../../" >> .lando.yml
+cp ../../.lando.local.yml .
 lando --clear
 
 # Should create a package.json

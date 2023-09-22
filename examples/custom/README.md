@@ -20,7 +20,7 @@ lando init --source cwd --recipe mean --option node=14 --option port=8055 --opti
 
 # Should start up successfully
 cd mean
-echo -e "\nplugins:\n  \"@lando/mean/\": ./../../" >> .lando.yml
+cp ../../.lando.local.yml .
 lando start
 ```
 
