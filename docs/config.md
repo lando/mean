@@ -46,7 +46,7 @@ Because most MEAN projects will require you `npm install` before they can start 
 recipe: mean
 config:
   build:
-    - yarn install
+    - npm install
   command: yarn dev
 ```
 

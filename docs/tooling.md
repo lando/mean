@@ -22,8 +22,8 @@ lando yarn      Runs yarn commands
 # Install some things globally
 lando npm install -g gulp-cli@latest
 
-# Run yarn install
-lando yarn install
+# Run npm install
+lando npm install
 
 # Drop into a mongo shell
 lando mongo
