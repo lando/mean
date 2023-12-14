@@ -53,7 +53,7 @@ lando node -v | grep v18.
 
 # Should be running mongo 7.0 by default
 cd mean
-lando ssh -s database -c "mongo --version | grep v7.0"
+lando ssh -s database -c "mongod --version" | grep "v7.0"
 
 # Should have yarn available
 cd mean
