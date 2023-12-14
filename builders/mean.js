@@ -2,7 +2,8 @@
 
 // Modules
 const _ = require('lodash');
-const utils = require('./../../lib/utils');
+const path = require('path');
+const utils = require('./../lib/utils');
 
 // Tooling defaults
 const toolingDefaults = {
@@ -16,7 +17,7 @@ const toolingDefaults = {
  */
 const getServices = options => ({
   appserver: {
-    type: `node:${options.node}`,
+    type: `mean-node:${options.node}`,
     command: options.command,
     build_internal: options.build,
     globals: options.globals,
@@ -25,7 +26,7 @@ const getServices = options => ({
   },
   database: {
     config: utils.getServiceConfig(options, ['database']),
-    type: options.database,
+    type: `mean-${options.database}`,
     portforward: true,
     creds: {
       user: options.recipe,
@@ -49,11 +50,11 @@ module.exports = {
   config: {
     build: ['npm install'],
     config: {},
-    confSrc: __dirname,
+    confSrc: path.resolve(__dirname, '..', 'config'),
     command: 'npm start',
-    database: 'mongo',
+    database: 'mongo:7.0',
     globals: {},
-    node: '14',
+    node: '18',
     port: '80',
     ssl: false,
   },
