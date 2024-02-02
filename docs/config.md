@@ -122,7 +122,7 @@ config:
 
 ## Installing global dependencies
 
-You can also use the `globals` key if you need to install any [global node dependenices](https://docs.npmjs.com/cli/install). This follows the same syntax as your normal [`package.json`](https://docs.npmjs.com/files/package.json) except written as YAML instead of JSON.
+You can also use the `globals` key if you need to install any [global node dependenices](https://www.mongodb.com/mean-stack). This follows the same syntax as your normal [`package.json`](https://docs.npmjs.com/cli/v10/configuring-npm/package-json) except written as YAML instead of JSON.
 
 An example of globally installing the `latest` `gulp-cli` is shown below:
 
