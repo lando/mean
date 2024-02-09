@@ -5,9 +5,9 @@ description: Learn how to configure the Lando MEAN recipe.
 
 # Configuration
 
-While Lando [recipes](https://docs.lando.dev/config/recipes.html) set sane defaults so they work out of the box, they are also [configurable](https://docs.lando.dev/config/recipes.html#config).
+While Lando [recipes](https://docs.lando.dev/core/v3/recipes.html) set sane defaults so they work out of the box, they are also [configurable](https://docs.lando.dev/core/v3/recipes.html#config).
 
-Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/config/lando.html). If you are unsure about where this goes or what this means, we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/config/recipes.html) to get a good handle on how the magicks work.
+Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/core/v3). If you are unsure about where this goes or what this means, we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/core/v3/recipes.html) to get a good handle on how the magicks work.
 
 ```yaml
 recipe: mean
@@ -24,13 +24,13 @@ config:
     database: SEE BELOW
 ```
 
-Note that if the above config options are not enough, all Lando recipes can be further [extended and overriden](https://docs.lando.dev/config/recipes.html#extending-and-overriding-recipes).
+Note that if the above config options are not enough, all Lando recipes can be further [extended and overriden](https://docs.lando.dev/core/v3/recipes.html#extending-and-overriding-recipes).
 
 ## Choosing a node version
 
 You can set `node` to any version that is available in our [node service](https://docs.lando.dev/node). However, you should consult the requirements for whatever you are running to make sure that version is actually supported.
 
-The [recipe config](https://docs.lando.dev/config/recipes.html#config) to set the MEAN recipe to use `node` version `8` is shown below:
+The [recipe config](https://docs.lando.dev/core/v3/recipes.html#config) to set the MEAN recipe to use `node` version `8` is shown below:
 
 ```yaml
 recipe: mean
@@ -50,7 +50,7 @@ config:
   command: yarn dev
 ```
 
-Note that a good rule of thumb is that `build` should install whatever **node** dependencies you need to start your app. If you require other non-node dependencies like server packages, consider using a [build step](https://docs.lando.dev/config/services.html#build-steps).
+Note that a good rule of thumb is that `build` should install whatever **node** dependencies you need to start your app. If you require other non-node dependencies like server packages, consider using a [build step](https://docs.lando.dev/core/v3/lando-service.html#build-steps).
 
 ## Setting a command
 
@@ -122,7 +122,7 @@ config:
 
 ## Installing global dependencies
 
-You can also use the `globals` key if you need to install any [global node dependenices](https://docs.npmjs.com/cli/install). This follows the same syntax as your normal [`package.json`](https://docs.npmjs.com/files/package.json) except written as YAML instead of JSON.
+You can also use the `globals` key if you need to install any [global node dependenices](https://www.mongodb.com/mean-stack). This follows the same syntax as your normal [`package.json`](https://docs.npmjs.com/cli/v10/configuring-npm/package-json/) except written as YAML instead of JSON.
 
 An example of globally installing the `latest` `gulp-cli` is shown below:
 
@@ -137,7 +137,7 @@ See [install global node dependencies](https://docs.lando.dev/node/config.html#i
 
 ## Using SSL
 
-Also note that `ssl: true` will only generate certs in the [default locations](https://docs.lando.dev/config/security.html) and expose port `443`. It is up to the user to use the certs and secure port correctly in their application like the `node` snippet below:
+Also note that `ssl: true` will only generate certs in the [default locations](https://docs.lando.dev/core/v3/security.html) and expose port `443`. It is up to the user to use the certs and secure port correctly in their application like the `node` snippet below:
 
 ```js
 // Get our key and cert
@@ -198,7 +198,7 @@ You can get also get the above information, and more, by using the [`lando info`
 
 ## Using custom config files
 
-You may need to override our [default MEAN config](https://github.com/lando/mean/tree/main/recipes/mean) with your own.
+You may need to override our [default MEAN config](https://github.com/lando/mean/tree/main/builders) with your own.
 
 If you do this, you must use files that exist inside your application and express them relative to your project root as shown below:
 

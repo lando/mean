@@ -8,7 +8,7 @@ next: ./config.html
 
 MEAN is a free and open-source JavaScript software stack for building dynamic web sites and web applications.
 
-Lando offers a configurable [recipe](https://docs.lando.dev/config/recipes.html) for developing [MEAN](https://en.wikipedia.org/wiki/MEAN_%28software_bundle%29) apps.
+Lando offers a configurable [recipe](https://docs.lando.dev/core/v3/recipes.html) for developing [MEAN](https://en.wikipedia.org/wiki/MEAN_%28software_bundle%29) apps.
 
 #### Features of this plugin:
 
