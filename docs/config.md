@@ -28,7 +28,7 @@ Note that if the above config options are not enough, all Lando recipes can be f
 
 ## Choosing a node version
 
-You can set `node` to any version that is available in our [node service](https://docs.lando.dev/node). However, you should consult the requirements for whatever you are running to make sure that version is actually supported.
+You can set `node` to any version that is available in our [node service](https://docs.lando.dev/plugins/node). However, you should consult the requirements for whatever you are running to make sure that version is actually supported.
 
 The [recipe config](https://docs.lando.dev/core/v3/recipes.html#config) to set the MEAN recipe to use `node` version `8` is shown below:
 
@@ -76,7 +76,7 @@ Note that whatever `command` you specify, you will want to make sure `build` is 
 
 ## Choosing a database backend
 
-By default, this recipe will use the default version of our [`mongo`](https://docs.lando.dev/mongo) service as the database backend but you can also switch this to use [`mysql`](https://docs.lando.dev/mysql), [`mariadb`](https://docs.lando.dev/mariadb) or ['postgres'](https://docs.lando.dev/postgres) instead.
+By default, this recipe will use the default version of our [`mongo`](https://docs.lando.dev/plugins/mongo) service as the database backend but you can also switch this to use [`mysql`](https://docs.lando.dev/plugins/mysql), [`mariadb`](https://docs.lando.dev/plugins/mariadb) or ['postgres'](https://docs.lando.dev/plugins/postgres) instead.
 
 Note that you can also specify a version *as long as it is a version available for use with lando* for either `mongo`, `mysql`, `mariadb` or `postgres`.
 
@@ -133,7 +133,7 @@ config:
     gulp-cli: latest
 ```
 
-See [install global node dependencies](https://docs.lando.dev/node/config.html#installing-global-dependencies) for more info.
+See [install global node dependencies](https://docs.lando.dev/plugins/node/config.html#installing-global-dependencies) for more info.
 
 ## Using SSL
 
