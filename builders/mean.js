@@ -6,6 +6,10 @@ const path = require('path');
 const utils = require('./../lib/utils');
 
 // Tooling defaults
+const getDatabaseType = options => {
+  return _.get(options, '_app.config.services.database.type', options.database) ?? 'mysql';
+};
+
 const toolingDefaults = {
   node: {service: 'appserver'},
   npm: {service: 'appserver'},
