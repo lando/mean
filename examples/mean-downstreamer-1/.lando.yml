@@ -1,5 +1,9 @@
 name: mean-downstreamer-1
 recipe: mean
+config:
+  build:
+    - echo "I am a downstreamer"
+  database: mysql
 
 services:
   database:

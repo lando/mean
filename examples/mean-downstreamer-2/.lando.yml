@@ -1,6 +1,11 @@
 name: mean-downstreamer-2
 recipe: mean
 
+config:
+  build:
+    - echo "I am a downstreamer"
+  database: mysql
+
 services:
   database:
     type: mean-mysql:8.0
