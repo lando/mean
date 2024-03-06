@@ -12,8 +12,10 @@ jobs:
       fail-fast: false
       matrix:
         leia-test:
-          - examples/mean
-          - examples/custom
+          - examples/mean-custom
+          - examples/mean-defaults
+          - examples/mean-downstreamer-1
+          - examples/mean-downstreamer-2
         lando-version:
           - 3-dev-slim
         os:

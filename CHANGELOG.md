@@ -1,3 +1,9 @@
+## v1.0.1 - [March 4, 2024](https://github.com/lando/mean/releases/tag/v1.0.1)
+
+### Fixes
+
+* Improved `database` selection for purposes of `config` loading, fixes some `database` bootup issues when the `database` type is overriden downstream
+
 ## v1.0.0 - [December 7, 2023](https://github.com/lando/mean/releases/tag/v1.0.0)
     * Dialed fully for `lando update`
 

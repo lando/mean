@@ -1,0 +1,15 @@
+name: mean-downstreamer-1
+recipe: mean
+config:
+  build:
+    - echo "I am a downstreamer"
+  database: mysql
+
+services:
+  database:
+    type: mysql:8.0
+
+# do not remove this
+plugins:
+  "@lando/mean": ../..
+  "@lando/mysql": ../../node_modules/@lando/mysql
