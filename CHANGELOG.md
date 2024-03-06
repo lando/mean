@@ -1,20 +1,24 @@
-## v1.0.1 - [March 4, 2024](https://github.com/lando/mean/releases/tag/v1.0.1)
+## v1.1.0 - [March 6, 2024](https://github.com/lando/mean/releases/tag/v1.1.0)
 
 ### Fixes
 
 * Improved `database` selection for purposes of `config` loading, fixes some `database` bootup issues when the `database` type is overriden downstream
+* Added config file handling for mysql/mariadb.
 
 ## v1.0.0 - [December 7, 2023](https://github.com/lando/mean/releases/tag/v1.0.0)
-    * Dialed fully for `lando update`
+
+* Dialed fully for `lando update`
 
 ## v0.8.0 - [July 3, 2023](https://github.com/lando/mean/releases/tag/v0.8.0)
-  * Removed bundle-dependencies and version-bump-prompt from plugin.
-  * Updated package to use prepare-release-action.
-  * Updated documentation to reflect new release process.
+
+* Removed bundle-dependencies and version-bump-prompt from plugin.
+* Updated package to use prepare-release-action.
+* Updated documentation to reflect new release process.
 
 ## v0.7.0 - [December 12, 2022](https://github.com/lando/mean/releases/tag/v0.7.0)
-  * Added bundle-dependencies to release process.
-  * Fixed bug in plugin dogfooding test.
+
+* Added bundle-dependencies to release process.
+* Fixed bug in plugin dogfooding test.
 
 ## v0.6.0 - [September 7, 2022](https://github.com/lando/mean/releases/tag/v0.6.0)
 
