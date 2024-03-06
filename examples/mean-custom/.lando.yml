@@ -1,0 +1,7 @@
+name: lando-mean-mysql
+recipe: mean
+config:
+  node: '14'
+  port: '8055'
+  database: mysql
+  config: config/mysql.cnf

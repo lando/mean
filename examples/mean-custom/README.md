@@ -14,13 +14,8 @@ Run the following commands to get up and running with this example.
 # Should poweroff
 lando poweroff
 
-# Initialize an empty mean recipe
-rm -rf mean && mkdir -p mean && cd mean
-lando init --source cwd --recipe mean --option node=14 --option port=8055 --option database=mysql --name lando-mean-mysql
-
 # Should start up successfully
-cd mean
-cp ../../.lando.local.yml .
+cp ../../.lando.upstream.yml .lando.upstream.yml
 lando start
 ```
 
@@ -31,24 +26,22 @@ Run the following commands to validate things are rolling as they should.
 
 ```bash
 # Should use node 14 if specified
-cd mean
 lando node -v | grep v14.
 
 # Should be running mysqq 5.7 by database defintion
-cd mean
 lando ssh -s database -u root -c "mysql --version" | grep "5.7"
 
 # Should have yarn available
-cd mean
 lando yarn -v
 
 # Should have npm available
-cd mean
 lando npm -v
 
 # Should have node available
-cd mean
 lando node -v
+
+# Should be using custom mysql config file
+lando mysql -u root -e "show variables;" | grep thread_cache_size | grep 12
 ```
 
 Destroy tests
@@ -58,7 +51,7 @@ Run the following commands to trash this app like nothing ever happened.
 
 ```bash
 # Should be destroyed with success
-cd mean
+
 lando destroy -y
 lando poweroff
 ```
