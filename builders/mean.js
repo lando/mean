@@ -2,6 +2,7 @@
 
 // Modules
 const _ = require('lodash');
+const fs = require('fs');
 const path = require('path');
 const utils = require('./../lib/utils');
 
@@ -88,10 +89,13 @@ module.exports = {
     confSrc: path.resolve(__dirname, '..', 'config'),
     command: 'npm start',
     database: 'mongo:7.0',
+    defaultFiles: {
+    },
     globals: {},
     node: '18',
     port: '80',
     ssl: false,
+    proxy: {},
   },
   builder: (parent, config) => class LandoMean extends parent {
     constructor(id, options = {}) {
@@ -100,7 +104,8 @@ module.exports = {
       options.services = _.merge({}, getServices(options), options.services);
       options.tooling = _.merge({}, getTooling(options), options.tooling);
       options.proxy = _.set({}, 'appserver', [`${options.app}.${options._app._config.domain}:${options.port}`]);
-      super(id, options);
+      // Send downstream
+      super(id, _.merge({}, config, options));
     };
   },
 };

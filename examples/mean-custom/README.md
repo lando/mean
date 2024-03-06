@@ -11,11 +11,8 @@ Start up tests
 Run the following commands to get up and running with this example.
 
 ```bash
-# Should poweroff
+# Should poweroff and start successfully
 lando poweroff
-
-# Should start up successfully
-cp ../../.lando.upstream.yml .lando.upstream.yml
 lando start
 ```
 
