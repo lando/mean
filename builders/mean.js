@@ -5,15 +5,46 @@ const _ = require('lodash');
 const path = require('path');
 const utils = require('./../lib/utils');
 
-// Tooling defaults
+/*
+ * Helper to get database type
+ */
 const getDatabaseType = options => {
   return _.get(options, '_app.config.services.database.type', options.database) ?? 'mysql';
 };
 
+// Tooling defaults
 const toolingDefaults = {
   node: {service: 'appserver'},
   npm: {service: 'appserver'},
   yarn: {service: 'appserver'},
+};
+
+/*
+ * Helper to get config defaults
+ */
+const getConfigDefaults = options => {
+  // attempt to discover the database that is actually being used
+  // @NOTE: this will look to see if database is overridden
+  const dbConfig = getDatabaseType(options);
+  const database = _.first(dbConfig.split(':'));
+  const version = _.last(dbConfig.split(':')).substring(0, 2);
+  if (database.includes('mysql') || database.includes('mariadb')) {
+    if (version === '8.') {
+      options.defaultFiles.database = 'mysql8.cnf';
+    } else {
+      options.defaultFiles.database = 'mysql.cnf';
+    }
+  }
+
+  // Verify files exist and remove if it doesn't
+  _.forEach(options.defaultFiles, (file, type) => {
+    if (!fs.existsSync(`${options.confDest}/${file}`)) {
+      delete options.defaultFiles[type];
+    }
+  });
+
+  // Return
+  return options.defaultFiles;
 };
 
 /*
@@ -65,6 +96,7 @@ module.exports = {
   builder: (parent, config) => class LandoMean extends parent {
     constructor(id, options = {}) {
       options = _.merge({}, config, options);
+      options.defaultFiles = _.merge({}, getConfigDefaults(_.cloneDeep(options)), options.defaultFiles);
       options.services = _.merge({}, getServices(options), options.services);
       options.tooling = _.merge({}, getTooling(options), options.tooling);
       options.proxy = _.set({}, 'appserver', [`${options.app}.${options._app._config.domain}:${options.port}`]);
