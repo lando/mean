@@ -13,7 +13,7 @@ Lando offers a configurable [recipe](https://docs.lando.dev/core/v3/recipes.html
 #### Features of this plugin:
 
 * Configurable `node` version from `6` all the way to `16`
-* Configurable database backend (`mariadb`, '`mongo`, `mysql`, or `postgres`)
+* Configurable database backend (`mariadb`, `mongo`, `mysql`, or `postgres`)
 * Setting start commands at recipe level
 * Install global dependencies at recipe level
 
