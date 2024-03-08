@@ -1,3 +1,6 @@
+## v1.1.0 - [March 8, 2024](https://github.com/lando/mean/releases/tag/v1.1.0)
+  * Updated to latest database services.
+
 ## v1.1.0 - [March 6, 2024](https://github.com/lando/mean/releases/tag/v1.1.0)
 
 ### Fixes
