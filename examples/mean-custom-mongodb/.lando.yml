@@ -1,0 +1,10 @@
+name: lando-mean-mongodb
+recipe: mean
+config:
+  node: '18'
+  port: '8055'
+  database: mongodb
+
+# do not remove this
+plugins:
+  "@lando/mean": ../..
