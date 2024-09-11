@@ -50,7 +50,7 @@ config:
   command: yarn dev
 ```
 
-Note that a good rule of thumb is that `build` should install whatever **node** dependencies you need to start your app. If you require other non-node dependencies like server packages, consider using a [build step](https://docs.lando.dev/core/v3/lando-service.html#build-steps).
+Note that a good rule of thumb is that `build` should install whatever **node** dependencies you need to start your app. If you require other non-node dependencies like server packages, consider using a [build step](https://docs.lando.dev/core/v3/services/lando.html#build-steps).
 
 ## Setting a command
 
