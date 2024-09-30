@@ -1,4 +1,9 @@
-## v1.1.0 - [March 8, 2024](https://github.com/lando/mean/releases/tag/v1.1.0)
+## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
+
+* Updated lando/mariadb to v1.5.0.
+* Updated lando/mysql to v1.3.0.
+
+## v1.2.0 - [March 8, 2024](https://github.com/lando/mean/releases/tag/v1.2.0)
   * Updated to latest database services.
 
 ## v1.1.0 - [March 6, 2024](https://github.com/lando/mean/releases/tag/v1.1.0)
