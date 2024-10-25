@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated release process to generate an edge release when stable releases are created.
+
 ## v1.3.0 - [September 30, 2024](https://github.com/lando/mean/releases/tag/v1.3.0)
 
 * Updated lando/mariadb to v1.5.0.
