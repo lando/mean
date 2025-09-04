@@ -18,7 +18,7 @@ jobs:
           - examples/mean-downstreamer-2
         lando-version:
           - 3-edge
-          - e-stable
+          - 3-stable
         os:
           - ubuntu-24.04
         node-version:
