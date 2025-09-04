@@ -1,5 +1,12 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Switched images to [bitnamilegacy](https://github.com/bitnami/containers/issues/83267) namespace
+* Updated to [@lando/mariadb@1.7.0](https://github.com/lando/mariadb/releases/tag/v1.7.0)
+* Updated to [@lando/mongo@1.4.0](https://github.com/lando/mongo/releases/tag/v1.4.0)
+* Updated to [@lando/mysql@1.6.0](https://github.com/lando/mysql/releases/tag/v1.6.0)
+* Updated to [@lando/node@1.5.0](https://github.com/lando/node/releases/tag/v1.5.0)
+* Updated to [@lando/postgres@1.5.0](https://github.com/lando/postgres/releases/tag/v1.5.0)
+
 ## v1.4.3 - [December 6, 2024](https://github.com/lando/mean/releases/tag/v1.4.3)
 
 * Updated the version index.md to get Docuverse page to build correctly.

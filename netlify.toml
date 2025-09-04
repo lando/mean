@@ -41,9 +41,16 @@
   [plugins.inputs.audits]
     output_path = "reports/lighthouse.html"
 
-
-
 # We need this so preview environments and the base site look ok on their own
+[[redirects]]
+  from = "https://lando-mean.netlify.app"
+  to = "https://lando-mean.netlify.app/plugins/mean/index.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://lando-mean.netlify.app/*"
+  to = "https://docs.lando.dev/:splat"
+  status = 301
 [[redirects]]
   from = "/"
   to = "/plugins/mean"
