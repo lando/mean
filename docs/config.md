@@ -5,18 +5,18 @@ description: Learn how to configure the Lando MEAN recipe.
 
 # Configuration
 
-While Lando [recipes](https://docs.lando.dev/core/v3/recipes.html) set sane defaults so they work out of the box, they are also [configurable](https://docs.lando.dev/core/v3/recipes.html#config).
+While Lando [recipes](https://docs.lando.dev/landofile/recipes.html) set sane defaults so they work out of the box, they are also [configurable](hhttps://docs.lando.dev/landofile/recipes.html#config).
 
-Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/core/v3). If you are unsure about where this goes or what this means, we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/core/v3/recipes.html) to get a good handle on how the magicks work.
+Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/landofile/). If you are unsure about where this goes or what this means, we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/landofile/recipes.html) to get a good handle on how the magicks work.
 
 ```yaml
 recipe: mean
 config:
-  node: 10
+  node: 20
   build:
     - npm install
   command: npm start
-  database: mongo:4.0
+  database: mongo:8.0
   globals: []
   port: '80'
   ssl: false
@@ -24,18 +24,18 @@ config:
     database: SEE BELOW
 ```
 
-Note that if the above config options are not enough, all Lando recipes can be further [extended and overriden](https://docs.lando.dev/core/v3/recipes.html#extending-and-overriding-recipes).
+Note that if the above config options are not enough, all Lando recipes can be further [extended and overriden](http://docs.lando.dev/landofile/recipes.html#extending-and-overriding-recipes).
 
 ## Choosing a node version
 
-You can set `node` to any version that is available in our [node service](https://docs.lando.dev/plugins/node). However, you should consult the requirements for whatever you are running to make sure that version is actually supported.
+You can set `node` to any version that is available in our [node service](https://docs.lando.dev/plugins/node/index.html). However, you should consult the requirements for whatever you are running to make sure that version is actually supported.
 
-The [recipe config](https://docs.lando.dev/core/v3/recipes.html#config) to set the MEAN recipe to use `node` version `8` is shown below:
+The [recipe config](https://docs.lando.dev/landofile/recipes.html#config) to set the MEAN recipe to use `node` version `8` is shown below:
 
 ```yaml
 recipe: mean
 config:
-  node: 8
+  node: 20
 ```
 
 ## Installing application dependencies
@@ -50,7 +50,7 @@ config:
   command: yarn dev
 ```
 
-Note that a good rule of thumb is that `build` should install whatever **node** dependencies you need to start your app. If you require other non-node dependencies like server packages, consider using a [build step](https://docs.lando.dev/core/v3/services/lando.html#build-steps).
+Note that a good rule of thumb is that `build` should install whatever **node** dependencies you need to start your app. If you require other non-node dependencies like server packages, consider using a [build step](https://docs.lando.dev/services/lando-3.html#build-steps).
 
 ## Setting a command
 
@@ -76,7 +76,7 @@ Note that whatever `command` you specify, you will want to make sure `build` is 
 
 ## Choosing a database backend
 
-By default, this recipe will use the default version of our [`mongo`](https://docs.lando.dev/plugins/mongo) service as the database backend but you can also switch this to use [`mysql`](https://docs.lando.dev/plugins/mysql), [`mariadb`](https://docs.lando.dev/plugins/mariadb) or ['postgres'](https://docs.lando.dev/plugins/postgres) instead.
+By default, this recipe will use the default version of our [`mongo`](https://docs.lando.dev/plugins/mongo/index.html) service as the database backend but you can also switch this to use [`mysql`](https://docs.lando.dev/plugins/mysql/index.html), [`mariadb`](https://docs.lando.dev/plugins/mariadb/index.html) or ['postgres'](https://docs.lando.dev/plugins/postgres/index.html) instead.
 
 Note that you can also specify a version *as long as it is a version available for use with lando* for either `mongo`, `mysql`, `mariadb` or `postgres`.
 
@@ -85,7 +85,7 @@ Note that you can also specify a version *as long as it is a version available f
 ```yaml
 recipe: mean
 config:
-  database: mongo
+  database: mongo:8.0
 ```
 
 #### Using MySQL
@@ -93,7 +93,7 @@ config:
 ```yaml
 recipe: mean
 config:
-  database: mysql
+  database: mysql:5.7
 ```
 
 #### Using MariaDB
@@ -101,7 +101,7 @@ config:
 ```yaml
 recipe: mean
 config:
-  database: mariadb
+  database: mariadb:11.4
 ```
 
 #### Using Postgres
@@ -109,7 +109,7 @@ config:
 ```yaml
 recipe: mean
 config:
-  database: postgres
+  database: postgres:11
 ```
 
 #### Using a custom version
@@ -137,7 +137,7 @@ See [install global node dependencies](https://docs.lando.dev/plugins/node/confi
 
 ## Using SSL
 
-Also note that `ssl: true` will only generate certs in the [default locations](https://docs.lando.dev/core/v3/security.html) and expose port `443`. It is up to the user to use the certs and secure port correctly in their application like the `node` snippet below:
+Also note that `ssl: true` will only generate certs in the [default locations](https://docs.lando.dev/config/security.html) and expose port `443`. It is up to the user to use the certs and secure port correctly in their application like the `node` snippet below:
 
 ```js
 // Get our key and cert
