@@ -69,7 +69,7 @@ lando exec appserver -- eslint -v
 cd mean
 lando npm install eslint
 lando exec appserver -- eslint -v
-lando exec appserver -- which eslint | grep /app/node_modules"
+lando exec appserver -- which eslint | grep /app/node_modules
 ```
 
 ## Destroy tests

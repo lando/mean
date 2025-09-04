@@ -5,7 +5,7 @@ description: Learn how to develop and contribute to the Lando Mean service
 
 # Development
 
-This guide contains information to help onboard developers to work on the [mean](https://www.mongodb.com/mean-stack) integration, hereafter referred to as *the plugin*.
+This guide contains information to help onboard developers to work on the [mean](https://www.mongodb.com/resources/languages/mean-stack) integration, hereafter referred to as *the plugin*.
 
 ## Requirements
 
