@@ -16,6 +16,7 @@ jobs:
           - examples/mean-defaults
           - examples/mean-downstreamer-1
           - examples/mean-downstreamer-2
+          - examples/mean-mysql84
         lando-version:
           - 3-edge
           - 3-stable
@@ -55,3 +56,4 @@ jobs:
           cleanup-header: "Destroy tests"
           shell: bash
           stdin: true
+          version: 1.0.0-beta.4
