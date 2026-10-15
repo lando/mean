@@ -1,5 +1,8 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Fixed MySQL 8.2+ failing to start by replacing the removed `expire_logs_days` setting with `binlog_expire_logs_seconds`
+* Fixed `mysql:8` loading the MySQL 5.7 config file and failing to start
+
 ## v1.5.0 - [September 4, 2025](https://github.com/lando/mean/releases/tag/v1.5.0)
 
 * Switched images to [bitnamilegacy](https://github.com/bitnami/containers/issues/83267) namespace
