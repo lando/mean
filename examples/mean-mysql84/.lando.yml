@@ -1,0 +1,11 @@
+name: mean-mysql84
+recipe: mean
+config:
+  # this example has no node app, so skip the default npm install
+  build:
+    - echo "skipping npm install"
+  database: mysql:8
+
+# do not remove this
+plugins:
+  "@lando/mean": ../..
